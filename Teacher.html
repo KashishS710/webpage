@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>little gift </title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f5e3d4;
+      color: #5e4635;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: 0.5s;
+    }
+
+    .container {
+      width: 320px;
+      padding: 20px;
+      background-color: #e9cdb2;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .login-subtext {
+      font-size: 0.95rem;
+      color: #8c6b54;
+      margin-bottom: 15px;
+      margin-top: -5px;
+      letter-spacing: 0.5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
+      border: 2px solid #d9a576;
+      background-color: #fce9db;
+      margin: 10px 0;
+      font-size: 1rem;
+      text-align: center;
+      color: #5e4635;
+    }
+
+    .btn {
+      background-color: #c48f65;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 1rem;
+      margin-top: 10px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #b1784e;
+    }
+
+    .error {
+      color: #a94442;
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+
+    .sheep-img {
+      width: 120px;
+      margin-top: 15px;
+    }
+
+    #thankyou {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 320px;
+    }
+
+    #thankyou h2 {
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+    }
+
+    #thankyou p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .gif-img {
+      width: 150px;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN PAGE -->
+  <div class="container" id="login">
+    <h1>LOGIN</h1>
+    <p class="login-subtext">This page is meant for someone who led the class.</p>
+
+    <input type="password" id="password" placeholder="Enter password" />
+    <button class="btn" onclick="checkPassword()">NEXT ➤</button>
+    <div class="error" id="errorMsg"></div>
+    <img src="ff.png" class="sheep-img" alt="cute sheep" />
+  </div>
+
+  <!-- THANK YOU PAGE -->
+  <div class="container" id="thankyou">
+    <h2>Welcome, Ma'am 🩷</h2>
+    <p>This isn’t a login form .<br>It’s just a little surprise.</p>
+    <p>Thank you for guiding us through AI with calm, quiet strength.<br>
+    You made complex things feel less heavy.</p>
+    <p>— from a quiet student who appreciated everything</p>
+    <img src="thnk.gif" class="gif-img" alt="Cute thank-you gif" />
+  </div>
+
+  <script>
+    function checkPassword() {
+      const enteredPassword = document.getElementById("password").value;
+      const correctPassword = "404AI"; // change this to match the one on the cup
+
+      if (enteredPassword === correctPassword) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("thankyou").style.display = "flex";
+      } else {
+        document.getElementById("errorMsg").textContent = "Hmm... that doesn’t seem right.";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
